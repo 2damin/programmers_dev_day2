@@ -10,6 +10,9 @@ from function.activation import *
 import matplotlib.pyplot as plt
 
 def convolution():
+    """_summary_
+    naive convolution and Im2Col&gemm convolution
+    """    
     print("convolution")
     
     #define the shape of input & weight
@@ -72,7 +75,9 @@ def convolution():
     print(L3)
 
 def forward_net():
-    
+    """_summary_
+    'Conv - Pooling - FC' model inference code 
+    """
     #define
     batch = 1
     in_c = 3
@@ -129,6 +134,10 @@ def forward_net():
     print(L2)
     
 def plot_activation():
+    """_summary_
+    Plot the activation output of [-10,10] inputs
+    activations : relu, leaky_relu, sigmoid, tanh
+    """    
     x = np.arange(-10,10,1)
     
     out_relu = relu(x)
@@ -147,6 +156,9 @@ def plot_activation():
     plt.show()
     
 def shallow_network():
+    """_summary_
+    'Conv - MaxPool - FC' shallow model's forward and backward code
+    """
     #input [1,1,6,6], 2 iter
     X = [np.array(np.random.standard_normal([1,1,6,6]), dtype=np.float32),
          np.array(np.random.standard_normal([1,1,6,6]), dtype=np.float32)]
